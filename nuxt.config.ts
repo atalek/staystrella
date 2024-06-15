@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/fonts',
     'nuxt-rate-limit',
-    'nuxt-gtag',
   ],
   experimental: {
     typedPages: true,
@@ -82,6 +81,7 @@ export default defineNuxtConfig({
       imageUrl: process.env.CLOUDINARY_PATH,
       cloudinaryName: process.env.CLOUDINARY_NAME,
       cloudinaryFolder: process.env.CLOUDINARY_FOLDER,
+      gtagId: process.env.GTAG_ID,
     },
   },
 
@@ -89,9 +89,5 @@ export default defineNuxtConfig({
     cloudinary: {
       baseURL: process.env.CLOUDINARY_PATH,
     },
-  },
-
-  gtag: {
-    id: process.env.GTAG_ID,
   },
 })
