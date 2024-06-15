@@ -3,11 +3,11 @@ import { db } from '~/server/db/drizzle'
 import { eq } from 'drizzle-orm'
 import { hash } from '@node-rs/argon2'
 import { generateIdFromEntropySize } from 'lucia'
-import { RegisterSchema } from '~/zod-schemas/auth-schemas'
+import { RegisterUserSchema } from '~/zod-schemas/auth-schemas'
 
 export default defineEventHandler(async event => {
   try {
-    const parseResult = await readValidatedBody(event, RegisterSchema.safeParse)
+    const parseResult = await readValidatedBody(event, RegisterUserSchema.safeParse)
 
     if (!parseResult.success) {
       throw createError({

@@ -14,17 +14,26 @@ export const EmailSchema = z
   .trim()
   .toLowerCase()
 
+export const NameSchema = z
+  .string()
+  .trim()
+  .min(3, { message: 'Name must be at least 3 characters long' })
+
 export const LoginSchema = z.object({
   email: EmailSchema,
   password: PasswordSchema,
 })
 
 export const RegisterSchema = LoginSchema.extend({
-  name: z.string().trim().min(3, { message: 'Name must be at least 3 characters long' }),
+  name: NameSchema,
   confirmPassword: PasswordSchema,
 }).refine(data => data.password === data.confirmPassword, {
   message: 'Passwords do not match',
   path: ['confirmPassword'],
+})
+
+export const RegisterUserSchema = LoginSchema.extend({
+  name: NameSchema,
 })
 
 export const PasswordsSchema = z
