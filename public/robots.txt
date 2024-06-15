@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /login
+Disallow: /register
+Disallow: /favorites
+Disallow: /profile
+Disallow: /properties/
+Disallow: /reservations
+Disallow: /trips
+Disallow: /create-listing
+Disallow: /account-settings/
+
+Allow: /
+Allow: /listings/
+Allow: /users/
