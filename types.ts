@@ -41,6 +41,7 @@ export type Listing = {
   imageSrc: string
   price?: number
   title: string
+  imagePublicId?: string
   description?: string
   reservations?: Reservation[]
   auth_user?: AuthUser

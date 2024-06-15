@@ -25,6 +25,7 @@ const listingData = reactive({
   roomCount: listing?.value?.roomCount || 1,
   bathroomCount: listing?.value?.bathroomCount || 1,
   guestCount: listing?.value?.guestCount || 1,
+  imagePublicId: listing?.value?.imagePublicId || '',
   locationValue:
     getByValue(listing?.value?.locationValue) || (null as CountrySelectValue | null),
   price: listing?.value?.price || 1,
@@ -98,6 +99,10 @@ function reduce(title: string) {
 
 function locationSelected(location: CountrySelectValue) {
   listingData.locationValue = location
+}
+
+function handlePublicId(publicId: string) {
+  listingData.imagePublicId = publicId
 }
 
 useSeoMeta({
@@ -176,7 +181,9 @@ useSeoMeta({
                 @reduce="reduce" />
             </div>
             <hr />
-            <ImageUpload v-model="listingData.imageSrc" />
+            <ImageUpload
+              v-model="listingData.imageSrc"
+              @imagePublicId="handlePublicId" />
             <hr />
             <Button
               class="w-full md:max-w-40"
