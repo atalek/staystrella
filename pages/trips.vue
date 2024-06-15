@@ -35,7 +35,7 @@ useSeoMeta({
   <section>
     <Container>
       <IsEmpty
-        v-if="!isLoading && !myTrips"
+        v-if="(!isLoading && myTrips.length === 0) || (!isLoading && !myTrips)"
         title="No trips found"
         subTitle="Looks like you haven't reserved any trips"
         showReset

@@ -116,6 +116,9 @@ password reset using **Resend**.
   RESEND_API_KEY="your resend api key"
   API_ROUTE_SECRET="api route secret used for protecting your email endpoints"
 
+  #Google tag
+  GTAG_ID="google tag"
+
 
   ```
 

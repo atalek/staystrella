@@ -32,7 +32,7 @@ export default defineEventHandler(async event => {
     if (existingUser) {
       const session = await lucia.createSession(existingUser.id, {})
       appendHeader(event, 'Set-Cookie', lucia.createSessionCookie(session.id).serialize())
-      return sendRedirect(event, '/')
+      return 'Successfully signed in!'
     }
 
     const userId = generateId(16)
@@ -48,7 +48,7 @@ export default defineEventHandler(async event => {
       .returning()
     const session = await lucia.createSession(userId, {})
     appendHeader(event, 'Set-Cookie', lucia.createSessionCookie(session.id).serialize())
-    return sendRedirect(event, '/')
+    return 'Successfully signed in!'
   } catch (e: OAuth2RequestError | any) {
     if (e instanceof OAuth2RequestError && e.message === 'bad_verification_code') {
       throw createError({

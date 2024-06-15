@@ -13,6 +13,7 @@ useSeoMeta({
     'vacation rental, accommodation, travel, holiday, getaway, rental property, rental home',
   author: 'Aleksandar Atanasovski',
   ogType: 'website',
+  ogSiteName: 'Staystrella',
   ogUrl: 'https://www.staystrella.atalek.com/',
   ogTitle: 'Staystrella - Your Ultimate Vacation Rental Experience',
   ogDescription:

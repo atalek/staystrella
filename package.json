@@ -43,6 +43,7 @@
     "@vueuse/nuxt": "^10.11.0",
     "drizzle-kit": "^0.21.4",
     "leaflet": "^1.9.4",
+    "nuxt-gtag": "^2.0.6",
     "nuxt-icon": "^0.6.10",
     "nuxt-rate-limit": "^1.2.0"
   }
