@@ -170,15 +170,17 @@ useSeoMeta({
               v-model="userInfo.provider"
               :disabled="true" />
           </div>
-          <p v-if="data?.email && data?.emailVerified === null">
-            Your email address is unverified.
+          <div
+            v-if="data?.email && data?.emailVerified === null"
+            class="text-sm md:text-base">
+            <span> Your email address is unverified. </span>
             <button
               @click="resendVerificationEmail"
               type="button"
               class="font-semibold underline text-slate-600 hover:text-slate-400">
               Click here to re-send the verification email
             </button>
-          </p>
+          </div>
 
           <p
             v-show="verificationLinkSent"
@@ -246,6 +248,7 @@ useSeoMeta({
     <EditFormContainer>
       <div class="mt-6 space-y-6 max-2w-xl">
         <Heading
+          class="text-sm md:text-base"
           danger
           title="Delete Account"
           subTitle="Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.  " />

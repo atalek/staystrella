@@ -5,8 +5,8 @@
 This project is a Vacation Rental Platform inspired by Airbnb, built with **Nuxt 3**,
 **Tailwind CSS**, **Headless UI**, **Neon PostgreSQL** for the database, **Drizzle ORM**,
 **Lucia Auth** with GitHub and Google OAuth, **Leaflet** for map integration,
-**Cloudinary** for image upload, **Zod** for validation, and email verification and
-password reset using **Resend**.
+**Cloudinary** for image upload, **Zod** for validation and email verification and
+password reset using **Resend** for sending email.
 
 ## Features
 
