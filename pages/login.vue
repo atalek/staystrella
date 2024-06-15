@@ -40,6 +40,7 @@ async function login() {
     isLoading.value = false
   }
 }
+
 useSeoMeta({
   title: 'Login',
 })
@@ -94,7 +95,7 @@ useSeoMeta({
 
     <div class="flex flex-col gap-4 mt-3">
       <hr />
-      <a href="/api/v1/auth/google">
+      <a href="login/google">
         <Button
           outline
           label="Continue with Google">
@@ -103,7 +104,7 @@ useSeoMeta({
             class="mr-1 size-5" />
         </Button>
       </a>
-      <a href="/api/v1/auth/github">
+      <a href="login/github">
         <Button
           outline
           label="Continue with Github">

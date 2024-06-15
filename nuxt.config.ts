@@ -38,7 +38,7 @@ export default defineNuxtConfig({
 
   nuxtRateLimit: {
     routes: {
-      '/api/v1/auth/**': { maxRequests: 10, intervalSeconds: 300 },
+      // '/api/v1/auth/**': { maxRequests: 10, intervalSeconds: 300 },
       '/api/v1/favorites/**': {
         maxRequests: 20,
         intervalSeconds: 60,
