@@ -18,13 +18,13 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/listings/**': { swr: true },
     '/users/**': { swr: true },
-    '/new-password': { prerender: true, appMiddleware: 'no-token' },
+    '/new-password': { prerender: true },
 
     '/login': { prerender: true, appMiddleware: 'unauthenticated' },
     '/register': { prerender: true, appMiddleware: 'unauthenticated' },
     '/reset-password': { prerender: true, appMiddleware: 'unauthenticated' },
 
-    '/verify-email': { prerender: true, appMiddleware: ['email-verified', 'no-token'] },
+    '/verify-email': { prerender: true, appMiddleware: ['email-verified'] },
 
     '/favorites': { prerender: true, appMiddleware: 'authenticated' },
     '/properties/**': { prerender: true, appMiddleware: 'authenticated' },
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
 
   nuxtRateLimit: {
     routes: {
-      // '/api/v1/auth/**': { maxRequests: 10, intervalSeconds: 300 },
+      '/api/v1/auth/**': { maxRequests: 10, intervalSeconds: 300 },
       '/api/v1/favorites/**': {
         maxRequests: 20,
         intervalSeconds: 60,

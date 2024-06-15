@@ -41,6 +41,18 @@ export default defineEventHandler(async event => {
       return sendRedirect(event, '/')
     }
 
+    const [emailInUse] = await db
+      .select({ email: user.email })
+      .from(user)
+      .where(eq(user.email, googleUser.email))
+
+    if (emailInUse) {
+      throw createError({
+        status: 409,
+        message: 'Email is already in use.',
+      })
+    }
+
     const userId = generateId(16)
     await db
       .insert(user)
