@@ -5,8 +5,6 @@ defineProps({
 </script>
 <template>
   <NuxtImg
-    fetchpriority="high"
-    loading="eager"
     src="/logo.webp"
     alt="logo"
     aria-label="logo"
