@@ -6,9 +6,9 @@ defineProps({
 <template>
   <NuxtImg
     src="/logo.webp"
-    alt="logo"
-    aria-label="logo"
     class="block"
     :height="big ? '120' : '60'"
-    :width="big ? '120' : '60'" />
+    :width="big ? '120' : '60'"
+    alt="logo"
+    aria-label="logo" />
 </template>
