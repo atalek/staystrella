@@ -5,7 +5,11 @@ defineProps({
 </script>
 <template>
   <NuxtImg
-    src="/logo.webp"
+    provider="cloudinary"
+    src="blbylsveezcwkzojlulk.png"
+    loading="eager"
+    fetchpriority="high"
+    format="webp"
     class="block"
     :height="big ? '120' : '60'"
     :width="big ? '120' : '60'"
