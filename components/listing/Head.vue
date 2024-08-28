@@ -35,6 +35,7 @@ const { isLoading } = useImage({ src: imageSrc })
       v-else>
       <NuxtImg
         loading="eager"
+        fetchpriority="high"
         provider="cloudinary"
         format="webp"
         :src="imageSrc"

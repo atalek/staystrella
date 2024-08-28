@@ -64,13 +64,45 @@ export default defineNuxtConfig({
     },
   },
 
+  hooks: {
+    'build:manifest': manifest => {
+      const css = manifest['node_modules/nuxt/dist/app/entry.js']?.css
+      if (css) {
+        for (let i = css.length - 1; i >= 0; i--) {
+          if (css[i].startsWith('entry')) css.splice(i, 1)
+        }
+      }
+
+      for (let key in manifest) {
+        const cssFiles = manifest[key]?.css
+        if (cssFiles) {
+          for (let i = cssFiles.length - 1; i >= 0; i--) {
+            if (
+              /Calendar\..*\.css/.test(cssFiles[i]) ||
+              /Map\..*\.css/.test(cssFiles[i])
+            ) {
+              cssFiles.splice(i, 1)
+            }
+          }
+        }
+      }
+    },
+  },
+
   app: {
     head: {
       htmlAttrs: {
         lang: 'en',
       },
-      link: [{ rel: 'icon', type: 'image/webp', href: '/logo.webp' }],
-      script: [{ src: 'https://upload-widget.cloudinary.com/global/all.js' }],
+      link: [
+        { rel: 'icon', type: 'image/webp', href: '/logo.webp' },
+        { rel: 'preconnect', href: 'https://www.googletagmanager.com' },
+        { rel: 'preconnect', href: 'https://upload-widget.cloudinary.com' },
+      ],
+
+      script: [
+        { src: 'https://upload-widget.cloudinary.com/global/all.js', defer: true },
+      ],
     },
   },
   runtimeConfig: {

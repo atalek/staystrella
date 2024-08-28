@@ -5,9 +5,12 @@ defineProps({
 </script>
 <template>
   <NuxtImg
+    fetchpriority="high"
+    loading="eager"
     src="/logo.webp"
+    alt="logo"
+    aria-label="logo"
     class="block"
     :height="big ? '120' : '60'"
-    :width="big ? '120' : '60'"
-    alt="company logo" />
+    :width="big ? '120' : '60'" />
 </template>

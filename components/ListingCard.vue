@@ -45,6 +45,8 @@ function favorited(id: string) {
     <div class="flex flex-col w-full gap-2">
       <div class="relative w-full overflow-hidden aspect-square rounded-xl">
         <NuxtImg
+          fetchpriority="high"
+          loading="eager"
           provider="cloudinary"
           sizes="100vw sm:80vw md:350px"
           :src="listing.imageSrc"
