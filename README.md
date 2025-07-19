@@ -1,4 +1,4 @@
-# Staystrella - Job Board
+# Staystrella 
 
 ![Landing page](https://res.cloudinary.com/dkofkuquf/image/upload/v1718382968/nuxtshop/quuh0quqxrwka8uh2vak.png)
 
